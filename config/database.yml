@@ -1,0 +1,21 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  username: postgres
+  password: postgres
+  timeout: 5000
+  encoding: unicode
+
+development:
+  <<: *default
+  database: contactbook_development
+
+test:
+  <<: *default
+  database: contactbook_test
+
+production:
+  <<: *default
+  database: contactbook_production
